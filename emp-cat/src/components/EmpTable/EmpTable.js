@@ -9,8 +9,8 @@ function EmpTable() {
     return (
         <div>
             <table className="table">
-                <tr>
-                    {tableContext.developerState.cols.map(({ name, width }) => {
+                {/* <tr>
+                    {tableContext.developerState.cols && tableContext.developerState.cols.map(({ name, width }) => {
                         return (
                             <th className="col" key={name} style={{ width }}
                                 onClick={() => {
@@ -23,7 +23,7 @@ function EmpTable() {
                         );
                     })}
 
-                </tr>
+                </tr> */}
                 <EmpData />
             </table>
         </div>

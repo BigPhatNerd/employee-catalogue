@@ -6,7 +6,7 @@ function EmpData() {
     const DataContext = useContext(EmpContext);
 
     return (
-        <tbody className="tableInfo">
+        <tbody >
     {DataContext.developerState.filteredEmployees[0] !== undefined && DataContext.developerState.filteredEmployees[0].name !== undefined ? (
 
     DataContext.developerState.filteredEmployees.map(( { name, picture, email, dob }) => {

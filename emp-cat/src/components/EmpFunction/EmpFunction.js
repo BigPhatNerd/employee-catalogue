@@ -6,17 +6,17 @@ import EmpTable from "../EmpTable/EmpTable.js";
 import Search from "../Search/Search.js";
 import Header from "../Header/Header.js";
 
-function EmpFunction() {
+const EmpFunction = () => {
     const [developerState, setDeveloperState] = useState({
         employees: [],
-        filteredEmps: [{}]
-        // cols: [
-        //     {name: "Picture", width: "20%"},
-        //     {name: "Name", width: "40%"},
-        //     {name: "Phone Number", width: "40%"},
-        //     {name: "Email", width: "40%"},
-        //     {name: "DOB", width: "20%"}
-        // ]
+        filteredEmps: [],
+        cols: [
+            {name: "Picture", width: "20%"},
+            {name: "Name", width: "40%"},
+            {name: "Phone Number", width: "40%"},
+            {name: "Email", width: "40%"},
+            {name: "DOB", width: "20%"}
+        ]
 
     });
 

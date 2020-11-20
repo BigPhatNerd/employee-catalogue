@@ -3,6 +3,6 @@ import axios from "axios";
 export default{ 
     searchEmps: function(){    
 
-        return axios.get("https://randomuser.me/api/?results=200&nat=us");
+        return axios.get("https://randomuser.me/api/?results=40&nat=us");
     }
 };

@@ -1,15 +1,16 @@
 import React, {useState, useEffect} from "react";
 import API from "../../utils/API";
-// import EmpContext from "../../utils/EmpContext";
+//import EmpContext from "../../utils/EmpContext";
 import Wrapper from "../Wrapper/Wrapper.js";
 import EmpTable from "../EmpTable/EmpTable.js";
-import Search from "../Search/Search.js"
+import Search from "../Search/Search.js";
+import Header from "../Header/Header.js";
 
 function EmpFunction() {
     const [developerState, setDeveloperState] = useState({
         employees: [],
         filteredEmps: [],
-        Cols: [
+        cols: [
             {name: "Picture", width: "20%"},
             {name: "Name", width: "40%"},
             {name: "Phone Number", width: "40%"},
@@ -20,23 +21,22 @@ function EmpFunction() {
     });
 
     const handleInputChange = event => {
-        setSearch(event.target.value);
-        const list = developerState.employees.filter(item => {
+        const filter= (event.target.value);
+        const List= developerState.employees.filter(item => {
             let values = item.name.first.toLowercase() + item.name.last.toLowercase();
             return values.indexOf(filter.toLowercase()) !== -1;
         })
 
         setDeveloperState({
             ...developerState,
-            employees: res.data.res,
-            filteredEmps: res.data.res
+            filteredEmps: List
         })
 
     };
 
     useEffect(() => {
         API.searchEmps()
-            .the(res => {
+            .then(res => {
                 setDeveloperState({
                     ...developerState,
                     employees: res.data,res,
@@ -51,7 +51,7 @@ function EmpFunction() {
         <Wrapper>
             <Header />
             <Search handleInputChange={handleInputChange}
-            res={} />
+            />
             <EmpTable 
                 Cols= {developerState.Cols}
                 employees= {developerState.filteredEmps}

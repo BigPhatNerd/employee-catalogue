@@ -1,20 +1,20 @@
 import React, { useContext } from "react";
-import EmpData from "../EmpData.js";
-import EmpTable from "./EmpTable.css";
+import EmpData from "../EmpData/EmpData.js";
+import "./EmpTable.css";
 import EmpContext from "../../utils/EmpContext";
 
-const EmpTable = () => {
+function EmpTable() {
     const tableContext = useContext(EmpContext);
 
     return (
         <div>
             <table className="table">
                 <tr>
-                    {context.developerState.headings.map(({ name, width }) => {
+                    {tableContext.developerState.cols.map(({ name, width }) => {
                         return (
                             <th className="col" key={name} style={{ width }}
                                 onClick={() => {
-                                    context.handleSort(name.toLowerCase());
+                                    tableContext.handleInputChange(name.toLowerCase());
                                 }}
                             >
                                 {name}

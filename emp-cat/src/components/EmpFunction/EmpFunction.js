@@ -45,7 +45,7 @@ const EmpFunction = () => {
                 });
             });
 
-    }), [];
+    }, []);
 
     return(
         <Wrapper>

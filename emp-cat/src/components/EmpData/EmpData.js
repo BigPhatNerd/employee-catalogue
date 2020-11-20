@@ -1,9 +1,9 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import EmpContext from "../../utils/EmpContext";
 import "./EmpData.css";
 
 function EmpData() {
-    const {name, picture, email, dob} = useContext(EmpContext);
+    const { name, picture, email, dob } = useContext(EmpContext);
 
     return (
 

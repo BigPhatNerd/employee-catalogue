@@ -50,7 +50,7 @@ const EmpFunction = () => {
     return(
         <Wrapper>
             <Header />
-            <Search handleInputChange={handleInputChange}
+            <Search handleSearchChange={handleInputChange}
             />
             <EmpTable 
                 Cols= {developerState.Cols}
